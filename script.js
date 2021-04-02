@@ -43,3 +43,15 @@ middleColumn.addEventListener("click", function() {
         }
     }
 })
+
+rightColumn.addEventListener("click", function() {
+    if (selectedBlock !== null && selectedBlock === squares[selectedBlock.dataset.location].firstElementChild) {
+        if (rightColumn.firstElementChild === null || selectedBlock.dataset.size < rightColumn.firstElementChild.dataset.size) {
+            rightColumn.insertBefore(selectedBlock, rightColumn.firstElementChild)
+            selectedBlock.dataset.location = 2
+            selectedBlock = null
+            moves.innerHTML = Number(moves.innerHTML)+1
+        }
+    }
+})
+
