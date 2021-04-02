@@ -55,3 +55,12 @@ rightColumn.addEventListener("click", function() {
     }
 })
 
+function reset(){
+    selectedBlock = null
+    for (let i = 0; i < 5; i++) {
+        leftColumn.appendChild(block[i])
+        blocks[i].dataset.location = 0
+    }
+    moves.innerHTML = "0"
+}
+restart.addEventListener("click", () => reset())
